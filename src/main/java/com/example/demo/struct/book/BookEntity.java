@@ -1,8 +1,15 @@
 package com.example.demo.struct.book;
 
 
+import com.example.demo.struct.author.AuthorEntity;
+import com.example.demo.struct.book.links.Book2AuthorEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "book")
@@ -34,6 +41,7 @@ public class BookEntity {
 
     @Column(columnDefinition = "INT NOT NULL DEFAULT 0")
     private int discount;
+
 
     public int getId() {
         return id;

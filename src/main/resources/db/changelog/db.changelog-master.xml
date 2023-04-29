@@ -9,11 +9,125 @@
 
     <include file="db/changelog/liquibase-outputChangeLog_init.xml"/>
 
+    <changeSet id="1" author="">
+        <addForeignKeyConstraint baseColumnNames="author_id"
+                                 baseTableName="book2author"
+                                 constraintName="author_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="author"/>
+    </changeSet>
+    <changeSet id="2" author="">
+        <addForeignKeyConstraint baseColumnNames="book_id"
+                                 baseTableName="book2author"
+                                 constraintName="book_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book"/>
 
-<!--    <changeSet author="codewizard" id="add new col">-->
-<!--        <addColumn tableName="books">-->
-<!--            <column name="author_id" type="VARCHAR(255)"/>-->
-<!--        </addColumn>-->
-<!--    </changeSet>-->
+    </changeSet>
+    <changeSet id="3" author="">
+        <addForeignKeyConstraint baseColumnNames="book_id"
+                                 baseTableName="book2genre"
+                                 constraintName="book_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book"/>
+
+    </changeSet>
+    <changeSet id="4" author="">
+        <addForeignKeyConstraint baseColumnNames="genre_id"
+                                 baseTableName="book2genre"
+                                 constraintName="genre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="genre"/>
+
+    </changeSet>
+    <changeSet id="5" author="">
+        <addForeignKeyConstraint baseColumnNames="book_id"
+                                 baseTableName="book2user"
+                                 constraintName="book_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book"/>
+
+    </changeSet>
+    <changeSet id="6" author="">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="book2user"
+                                 constraintName="user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+    </changeSet>
+    <changeSet id="7" author="">
+        <addForeignKeyConstraint baseColumnNames="book_id"
+                                 baseTableName="file_download"
+                                 constraintName="book_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book"/>
+
+    </changeSet>
+    <changeSet id="8" author="">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="file_download"
+                                 constraintName="user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+    </changeSet>
+    <changeSet id="9" author="">
+        <addForeignKeyConstraint baseColumnNames="book_id"
+                                 baseTableName="balance_transaction"
+                                 constraintName="book_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book"/>
+
+    </changeSet>
+    <changeSet id="10" author="">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="balance_transaction"
+                                 constraintName="user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+    </changeSet>
+    <changeSet id="11" author="">
+        <addForeignKeyConstraint baseColumnNames="book_id"
+                                 baseTableName="book_review"
+                                 constraintName="book_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="book"/>
+
+    </changeSet>
+    <changeSet id="12" author="">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="book_review"
+                                 constraintName="user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+    </changeSet>
+    <changeSet id="13" author="">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="message"
+                                 constraintName="user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+    </changeSet>
+    <changeSet id="14" author="">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="user_contact"
+                                 constraintName="user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+    </changeSet>
+
+    <changeSet id="15" author="">
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="book_review_like"
+                                 constraintName="user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+    </changeSet>
 
 </databaseChangeLog>

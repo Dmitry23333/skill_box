@@ -1,6 +1,10 @@
 package com.example.demo.struct.author;
 
+import com.example.demo.struct.book.BookEntity;
+import com.example.demo.struct.book.links.Book2AuthorEntity;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "author")
@@ -20,6 +24,7 @@ public class AuthorEntity {
 
     @Column(columnDefinition = "TEXT")
     private String description;
+
 
     public int getId() {
         return id;
@@ -60,4 +65,5 @@ public class AuthorEntity {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

@@ -1,5 +1,8 @@
 package com.example.demo.struct.book.links;
 
+import com.example.demo.struct.author.AuthorEntity;
+import com.example.demo.struct.book.BookEntity;
+
 import javax.persistence.*;
 
 @Entity
@@ -27,6 +30,14 @@ public class Book2AuthorEntity {
         this.id = id;
     }
 
+    public int getSortIndex() {
+        return sortIndex;
+    }
+
+    public void setSortIndex(int sortIndex) {
+        this.sortIndex = sortIndex;
+    }
+
     public int getBookId() {
         return bookId;
     }
@@ -41,13 +52,5 @@ public class Book2AuthorEntity {
 
     public void setAuthorId(int authorId) {
         this.authorId = authorId;
-    }
-
-    public int getSortIndex() {
-        return sortIndex;
-    }
-
-    public void setSortIndex(int sortIndex) {
-        this.sortIndex = sortIndex;
     }
 }
