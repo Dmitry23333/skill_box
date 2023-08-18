@@ -47,7 +47,7 @@ public class MainPageController {
     }
 
 
-    @ModelAttribute("booksByDates")
+    @ModelAttribute("recent")
     public List<BookEntity> getRecentBooks() {
         return bookService.getPageOfRecentBooks(0, 20).getContent();
     }
@@ -62,7 +62,7 @@ public class MainPageController {
     @ModelAttribute("popular")
     public List<BookEntity> popularBooks() {
 
-        return booksRatingAndPopularityService.getPageOfPopularBooks(0, 5).getContent();
+        return booksRatingAndPopularityService.getPageOfPopularBooks(0, 6).getContent();
     }
 
     @ModelAttribute("tags")
