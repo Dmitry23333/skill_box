@@ -1,0 +1,30 @@
+<!DOCTYPE html  >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="Cards" th:fragment="bookCardFragment">
+    <div class="Card" th:each="book: ${booksList}">
+        <a class="Card-picture" href="#a" th:href="${book.id}"><img src="/assets/img/content/main/card.jpg"
+                                                                    alt="card.jpg"/></a>
+        <div class="Card-picture" th:if="${book.discount != 0}">
+            <div class="Card-sale" th:text="#{sale} + ${book.discount} + '%'"></div>
+        </div>
+        <div class="Card-content">
+            <strong class="Card-title" th:text=" ${book.title}"><a href="/books/slug.html">Техника</a>
+            </strong>
+            <div class="Card-description" th:text="${book.getAuthorEntity.getName}">Кондратенко
+                Валерий Петрович
+            </div>
+            <div class="Card-cost" th:if="${book.discount == 0}">
+                <div class="Card-price" th:text="${book.price}"></div>
+                <span class="Card-price">₽</span>
+            </div>
+            <div class="Card-cost" th:if="${book.discount != 0}">
+                <div class="Card-priceOld" th:text="${book.price}"></div>
+                <div class="Card-price" th:text="${book.price - book.price * book.discount/100}"></div>
+                <span class="Card-price">₽</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
