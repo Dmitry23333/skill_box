@@ -1,5 +1,7 @@
-package com.example.demo.data;
+package com.example.demo.services;
 
+import com.example.demo.repositories.BookRepository;
+import com.example.demo.data.BooksPageDto;
 import com.example.demo.struct.book.BookEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -9,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -31,34 +32,16 @@ public class BookService {
     }
 
 
-    public Page<BookEntity> getPageOfRecentBooks(Integer offset, Integer limit) {
-        Pageable nextPage = PageRequest.of(offset, limit);
-        return bookRepository.getRecent(nextPage);
-    }
-
-
     public Page<BookEntity> getPageOfSearchResultBooks(String searchWord, Integer offset, Integer limit) {
         Pageable nextPage = PageRequest.of(offset, limit);
         return bookRepository.findBookByTitleContaining(searchWord, nextPage);
     }
 
 
-    public Page<BookEntity> getPageOfSearchDateBetweenResultBooks(String from, String to, Integer offset, Integer limit) {
-        Pageable nextPage = PageRequest.of(offset, limit);
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-           Date dateStart = formatter.parse(from);
-            Date dateEnd = formatter.parse(to);
-    return bookRepository.findBookEntityByPubDateBetween(dateStart,dateEnd, nextPage);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
     public List<BookEntity> getBooksByAuthorEntityName(String name) {
         return bookRepository.findBooksByAuthorEntityNameContaining(name);
     }
+
 
     public List<BookEntity> getBooksByTitle(String title) {
         return bookRepository.findBooksByTitle(title);
@@ -82,16 +65,44 @@ public class BookService {
         return bookRepository.getBestsellers();
     }
 
-   // public List<BookEntity> getRestRecentBooks(String from, String to) {
-    //    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-   //     try {
-    //        Date dateStart = formatter.parse(from);
-    //        Date dateEnd = formatter.parse(to);
-    //        return bookRepository.findBookEntityByPubDateBetweenIs(dateStart,dateEnd);
-    //    } catch (ParseException e) {
-    //        throw new RuntimeException(e);
-    //    }
-   // }
+
+    public Page<BookEntity> getPageOfRecentBooks(Integer offset, Integer limit) {
+        Pageable nextPage = PageRequest.of(offset, limit);
+        return bookRepository.getRecent(nextPage);
+    }
 
 
+    public BooksPageDto getPageOfBetweenDatesBooks(Integer offset, Integer limit, String from, String to) {
+        Pageable nextPage = PageRequest.of(offset, limit);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+        Page<BookEntity> page;
+        if (from != null && to != null) {
+            try {
+                page = bookRepository.getBooksBetweenDates(nextPage, formatter.parse(from), formatter.parse(to));
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            page = bookRepository.getRecent(nextPage);
+        }
+        BooksPageDto booksPageDto = new BooksPageDto();
+        booksPageDto.setCount(page.getTotalPages());
+        booksPageDto.setBooks(page.getContent());
+        return booksPageDto;
+    }
+
+    public Page<BookEntity> getPageOfBooksByTag(Integer id, Integer offset, Integer limit) {
+        Pageable nextPage = PageRequest.of(offset, limit);
+        return bookRepository.getBooksByTagID(nextPage, id);
+    }
+
+    public Page<BookEntity> getPageOfBooksByGenreId(Integer id, Integer offset, Integer limit) {
+        Pageable nextPage = PageRequest.of(offset, limit);
+        return bookRepository.getBooksByGenreId(nextPage, id);
+    }
+
+    public Page<BookEntity> getPageOfBooksByAuthor(Integer id, Integer offset, Integer limit) {
+        Pageable nextPage = PageRequest.of(offset, limit);
+        return bookRepository.getBooksByAuthorId(nextPage, id);
+    }
 }

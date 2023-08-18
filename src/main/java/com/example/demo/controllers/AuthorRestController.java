@@ -1,6 +1,6 @@
 package com.example.demo.controllers;
 
-import com.example.demo.data.AuthorRepository;
+import com.example.demo.repositories.AuthorRepository;
 import com.example.demo.struct.author.AuthorEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

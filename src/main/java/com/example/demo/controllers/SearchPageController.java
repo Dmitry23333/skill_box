@@ -1,6 +1,6 @@
 package com.example.demo.controllers;
 
-import com.example.demo.data.BookService;
+import com.example.demo.services.BookService;
 import com.example.demo.data.BooksPageDto;
 import com.example.demo.data.SearchWordDto;
 import com.example.demo.struct.book.BookEntity;
@@ -31,20 +31,20 @@ public class SearchPageController {
 
     @GetMapping(value = {"/search", "/search/{searchWord}"})
     public String getSearchResults(@PathVariable(value = "searchWord", required = false) SearchWordDto searchWordDto,
-                                   Model model ){
+                                   Model model) {
         model.addAttribute("searchWordDto", searchWordDto);
         model.addAttribute("searchResults", bookService.getPageOfSearchResultBooks(searchWordDto
-                .getExample(),0, 5).getContent());
+                .getExample(), 0, 5).getContent());
         return "/search/index";
     }
 
     @ModelAttribute("searchWordDto")
-    public SearchWordDto searchWordDto(){
+    public SearchWordDto searchWordDto() {
         return new SearchWordDto();
     }
 
     @ModelAttribute("searchResults")
-    public List<BookEntity> searchResults(){
+    public List<BookEntity> searchResults() {
         return new ArrayList<>();
     }
 
@@ -52,8 +52,8 @@ public class SearchPageController {
     @ResponseBody
     public BooksPageDto getNextSearchPage(@RequestParam("offset") Integer offset,
                                           @RequestParam("limit") Integer limit,
-                                          @PathVariable(value = "searchWord", required = false) SearchWordDto searchWordDto){
-        return new BooksPageDto(bookService.getPageOfSearchResultBooks(searchWordDto.getExample(),offset,limit).getContent());
+                                          @PathVariable(value = "searchWord", required = false) SearchWordDto searchWordDto) {
+        return new BooksPageDto(bookService.getPageOfSearchResultBooks(searchWordDto.getExample(), offset, limit).getContent());
     }
 
 }

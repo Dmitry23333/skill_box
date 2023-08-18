@@ -5,8 +5,12 @@ import com.example.demo.struct.book.BookEntity;
 import java.util.List;
 
 public class BooksPageDto {
+
     private Integer count;
     private List<BookEntity> books;
+
+    public BooksPageDto() {
+    }
 
     public BooksPageDto(List<BookEntity> books) {
         this.books = books;

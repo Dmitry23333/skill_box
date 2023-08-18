@@ -1,12 +1,12 @@
-package com.example.demo.data;
+package com.example.demo.services;
 
 
+import com.example.demo.repositories.AuthorRepository;
 import com.example.demo.struct.author.AuthorEntity;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import java.sql.ResultSet;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -21,8 +21,10 @@ public class AuthorService {
     }
 
     public Map<String, List<AuthorEntity>> getAuthorsMap() {
-        return authorRepository.findAll().stream().collect(Collectors.groupingBy((AuthorEntity a) -> {
-            return a.getName().substring(0, 1);
-        }));
+        return authorRepository.findAll().stream().collect(Collectors.groupingBy((AuthorEntity a) -> a.getName().substring(0, 1)));
+    }
+
+    public AuthorEntity getAuthorById(Integer id) {
+        return authorRepository.getById(id);
     }
 }

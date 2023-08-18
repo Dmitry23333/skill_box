@@ -2,17 +2,26 @@ package com.example.demo.struct.book;
 
 
 import com.example.demo.struct.author.AuthorEntity;
-import io.swagger.models.auth.In;
+import com.example.demo.struct.genre.GenreEntity;
+import com.example.demo.struct.tags.TagEntity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "book")
 public class BookEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
 
     @Column(columnDefinition = "DATE NOT NULL")
     private Date pubDate;
@@ -43,15 +52,58 @@ public class BookEntity {
         this.authorEntity = authorEntity;
     }
 
-    @Column(columnDefinition = "INT NOT NULL DEFAULT 0")
+
+
+    @Column(columnDefinition = "INT  DEFAULT 0")
     private Integer discount;
+    @Column(columnDefinition = "INT  DEFAULT 0")
+    private Integer B;
+    @Column(columnDefinition = "INT  DEFAULT 0")
+    private Integer C;
+
+    @Column(columnDefinition = "INT  DEFAULT 0")
+    private Integer K;
+
+    @Column(columnDefinition = "INT  DEFAULT 0")
+    private Double popularity;
+
+    public Double getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity() {
+        this.popularity = B + 0.7 * C + 0.4 * K;
+    }
+
+    public TagEntity getTagEntity() {
+        return tagEntity;
+    }
+
+    public void setTagEntity(TagEntity tagEntity) {
+        this.tagEntity = tagEntity;
+    }
 
     @ManyToOne
     @JoinColumn(name = "author_id", referencedColumnName = "id")
     private AuthorEntity authorEntity;
 
-    public Integer getId() {
-        return id;
+    @ManyToOne
+    @JoinColumn(name = "tag_id", referencedColumnName = "id")
+    private TagEntity tagEntity;
+
+
+
+    @ManyToMany
+    @JoinTable(name = "book2genreEntity",
+    joinColumns = {@JoinColumn(name = "book_id")})
+    private Set<GenreEntity> genreEntities = new HashSet<>();
+
+    public Set<GenreEntity> getGenreEntities() {
+        return genreEntities;
+    }
+
+    public void setGenreEntities(Set<GenreEntity> genreEntities) {
+        this.genreEntities = genreEntities;
     }
 
     public void setId(Integer id) {
@@ -128,5 +180,28 @@ public class BookEntity {
 
     public void setIsBestseller(Integer isBestseller) {
         this.isBestseller = isBestseller;
+    }
+    public Integer getB() {
+        return B;
+    }
+
+    public void setB(Integer b) {
+        this.B = b;
+    }
+
+    public Integer getC() {
+        return C;
+    }
+
+    public void setC(Integer c) {
+        C = c;
+    }
+
+    public Integer getK() {
+        return K;
+    }
+
+    public void setK(Integer k) {
+        K = k;
     }
 }

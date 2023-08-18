@@ -26,7 +26,7 @@ public class SpringfoxConfig {
 
     public ApiInfo apiInfo(){
         return new ApiInfo(
-                "BookSho API",
+                "BookShop API",
                 "Api for bookstore",
                 "1,0",
                 "http://www.termofservice.org",

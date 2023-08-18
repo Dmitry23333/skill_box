@@ -18,7 +18,7 @@
     <!--meta( http-equiv="cache-control" content="no-cache")-->
     <!--meta( http-equiv="expires" content="0")-->
     <!--link(rel="preload" href="assets/css/extra.min.css?v=" + version as="style" crossorigin="anonymous")-->
-    <link href="favicon.ico" rel="shortcut icon">
+    <link href="/favicon.ico" rel="shortcut icon">
     <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-SemiBold.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-Light.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-Medium.woff2" as="font" crossorigin="anonymous">
@@ -59,12 +59,36 @@ p.error-browser
                 </div>
 
                 <div class="Cards Cards_refresh">
-                    <div th:replace="~{fragments/books_pool_fragment ::bookCardFragment}"></div>
+                    <div class="Cards" th:fragment="bookCardFragment">
+                        <div class="Card" th:each="book: ${popular}">
+                            <a class="Card-picture" href="#a" th:href="${book.id}"><img th:src="${book.image}"
+                                                                                        alt="card.jpg"/></a>
+                            <div class="Card-picture" th:if="${book.discount != 0}">
+                                <div class="Card-sale" th:text="#{sale} + ${book.discount} + '%'"></div>
+                            </div>
+                            <div class="Card-content">
+                                <strong class="Card-title" th:text=" ${book.title}"><a href="/books/slug.html">Техника</a>
+                                </strong>
+                                <div class="Card-description" th:text="${book.getAuthorEntity.getName}">Кондратенко
+                                    Валерий Петрович
+                                </div>
+                                <div class="Card-cost" th:if="${book.discount == 0}">
+                                    <div class="Card-price" th:text="${book.price}"></div>
+                                    <span class="Card-price">₽</span>
+                                </div>
+                                <div class="Card-cost" th:if="${book.discount != 0}">
+                                    <div class="Card-priceOld" th:text="${book.price}"></div>
+                                    <div class="Card-price" th:text="${book.price - book.price * book.discount/100}"></div>
+                                    <span class="Card-price">₽</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <div class="Cards-footer Cards-footer_center"><a class="btn btn_primary" href="#"
-                                                                     data-refreshshow="popular"
-                                                                     data-refreshoffset="20" data-refreshlimit="20">Показать
+                                                                     th:attr="data-refreshshow='popular'"
+                                                                     data-refreshoffset = 0 data-refreshlimit='5'>Показать
                         еще</a>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "author")
-@ApiModel(description ="data model of author entity")
+@ApiModel(description = "data model of author entity")
 public class AuthorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +42,13 @@ public class AuthorEntity {
     @JsonIgnore
     private List<BookEntity> bookEntityList = new ArrayList<>();
 
+    public List<BookEntity> getBookEntityList() {
+        return bookEntityList;
+    }
+
+    public void setBookEntityList(List<BookEntity> bookEntityList) {
+        this.bookEntityList = bookEntityList;
+    }
 
     public int getId() {
         return id;

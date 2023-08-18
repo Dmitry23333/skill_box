@@ -4303,10 +4303,12 @@ img {
 }
 .Tag_md {
   font-size: 1.1em;
+  float: left;
 }
 .Tag_lg {
   font-size: 1.5em;
   line-height: 1.1em;
+  float: left
 }
 .Tag_sm {
   font-size: 0.8em;

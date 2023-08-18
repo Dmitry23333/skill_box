@@ -23,8 +23,8 @@
                                  referencedColumnNames="id"
                                  referencedTableName="book"/>
 
-    </changeSet>
-    <changeSet id="3" author="">
+    </changeSet>!
+    <changeSet id="1" author="">
         <addForeignKeyConstraint baseColumnNames="book_id"
                                  baseTableName="book2genre"
                                  constraintName="book_id"
@@ -32,7 +32,7 @@
                                  referencedTableName="book"/>
 
     </changeSet>
-    <changeSet id="4" author="">
+    <changeSet id="2" author="">
         <addForeignKeyConstraint baseColumnNames="genre_id"
                                  baseTableName="book2genre"
                                  constraintName="genre_id"
@@ -40,7 +40,7 @@
                                  referencedTableName="genre"/>
 
     </changeSet>
-    <changeSet id="5" author="">
+    <changeSet id="2" author="">
         <addForeignKeyConstraint baseColumnNames="book_id"
                                  baseTableName="book2user"
                                  constraintName="book_id"
