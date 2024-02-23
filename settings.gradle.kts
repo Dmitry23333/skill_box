@@ -1,1 +1,1 @@
-rootProject.name = "jdbc_module"
+rootProject.name = "demo"
