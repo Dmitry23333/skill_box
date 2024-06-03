@@ -1,0 +1,9 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:29092
+app:
+  kafka:
+    kafkaMessageTopic: "order-topic"
+    kafkaStatusTopic: "order-status-topic"
+    kafkaMessageGroupId: "kafka-status-group-id"
+
