@@ -1,0 +1,9 @@
+package com.example.kafka.model;
+
+import lombok.Data;
+
+@Data
+public class Order {
+    private String product;
+    private Integer quantity;
+}
