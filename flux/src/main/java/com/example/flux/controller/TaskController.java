@@ -42,7 +42,7 @@ public class TaskController {
                 .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
-    @PutMapping("/addObs/{taskId}")
+    @PostMapping("/addObs/{taskId}")
     public Mono<ResponseEntity<BriefTaskResponse>> addObserverToTask(@PathVariable String taskId, @Param("obsId") String obsId) {
         return taskService.addObserver(taskId, obsId)
                 .map(taskMapper::upsertTaskToResponse)
