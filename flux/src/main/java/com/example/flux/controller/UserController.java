@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.concurrent.ExecutionException;
+
 
 @RestController
 @RequestMapping("/api/users")
@@ -47,7 +49,7 @@ public class UserController {
         return userService.deleteById(id).then(Mono.just(ResponseEntity.noContent().build()));
     }
     @PostMapping("/account")
-    public Mono<ResponseEntity<UserResponse>> createUser(@RequestBody UpsertUserRequest userRequest, @RequestParam RoleType roleType) throws UserAlreadyExistException {
+    public Mono<ResponseEntity<UserResponse>> createUser(@RequestBody UpsertUserRequest userRequest, @RequestParam RoleType roleType) throws UserAlreadyExistException, ExecutionException, InterruptedException {
         return userService.createNewAccount(userMapper.requestToUser(userRequest), roleType)
                 .map(userMapper::userToResponse)
                 .map(ResponseEntity::ok);
