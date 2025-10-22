@@ -1,0 +1,4 @@
+17 окт. 2025 06:37:45,074  -  -   INFO SQLConflictLogger - TRANSACTION  lsfusion.server.data.sql.exception.SQLConflictException: UPDATE_CONFLICT UPDATE _auto SET Time_currentDate=CAST(('2025-10-17 +03') AS date) FROM dumb WHERE 1=1
+20 окт. 2025 08:06:29,646  -  -   INFO SQLConflictLogger - TRANSACTION  lsfusion.server.data.sql.exception.SQLConflictException: UPDATE_CONFLICT UPDATE _auto SET Time_currentDate=CAST(('2025-10-20 +03') AS date) FROM dumb WHERE 1=1
+21 окт. 2025 08:55:36,963  -  -   INFO SQLConflictLogger - TRANSACTION  lsfusion.server.data.sql.exception.SQLConflictException: UPDATE_CONFLICT UPDATE _auto SET Time_currentDate=CAST(('2025-10-21 +03') AS date) FROM dumb WHERE 1=1
+22 окт. 2025 10:16:44,968  -  -   INFO SQLConflictLogger - TRANSACTION  lsfusion.server.data.sql.exception.SQLConflictException: UPDATE_CONFLICT UPDATE _auto SET Time_currentDate=CAST(('2025-10-22 +03') AS date) FROM dumb WHERE 1=1

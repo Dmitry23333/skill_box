@@ -1,0 +1,59 @@
+22 окт. 2025 10:16:45,006 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 10:47:06,274 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 10:48:14,224 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 10:49:22,309 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 10:52:48,855 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 10:53:58,039 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 10:55:30,762 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 10:57:48,716 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 10:59:35,068 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 11:02:25,166 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 11:06:47,015 ERROR StartLogger - Exception while starting logics instance: [error]:
+	HockeyStats:176:18 action 'gameGoals[][]' is not found
+Subsequent errors (if any) could not be found.
+22 окт. 2025 11:07:12,862 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 11:09:54,878 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 11:10:55,376 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 11:13:06,510 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 13:01:10,624 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 13:01:12,634 ERROR LogicsModule - com.google.gwt.core.shared.SerializableThrowable com.google.gwt.core.client.JavaScriptException (Error) : Field selectNullDropdown not found at '22.10.2025, 13:01' from '127.0.0.1 - web': 
+
+	at Unknown.YIc(main-0.js:8585)
+	at Unknown.new y$e(main-0.js:6929)
+	at Unknown.MGe(main-0.js:9440)
+	at Unknown.RGe(main-0.js:9697)
+	at Unknown.wBe(main-0.js:10369)
+	at Unknown.xme(main-0.js:8974)
+	at Unknown.YIc(GwtClientUtils.java:1593)
+	at Unknown.y$e(CustomReplaceCellEditor.java:91)
+	at Unknown.MGe(GPropertyDraw.java:627)
+	at Unknown.RGe(GPropertyDraw.java:611)
+	at Unknown.wBe(GPropertyTableBuilder.java:36)
+	at Unknown.xme(GGridPropertyTable.java:849)
+	at Unknown.Bme(GGridPropertyTable.java:844)
+	at Unknown.B2c(AbstractDataGridBuilder.java:220)
+	at Unknown.qBe(GPropertyTableBuilder.java:144)
+	at Unknown.z2c(GPropertyTableBuilder.java:119)
+	at Unknown.i4c(DataGrid.java:1648)
+	at Unknown.Z4c(DataGrid.java:1070)
+	at Unknown._4c(DataGrid.java:1715)
+	at Unknown.yt(SchedulerImpl.java:50)
+	at Unknown.nt(SchedulerImpl.java:279)
+	at Unknown.bt(Impl.java:375)
+	at Unknown.at(Impl.java:366)
+	at Unknown.anonymous(Impl.java:78)
+
+
+22 окт. 2025 13:20:44,165 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 13:21:42,307 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 13:22:19,218 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 13:39:21,662 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 14:11:55,062 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 14:14:25,940 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 14:16:24,586 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 14:31:36,806 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 14:34:23,521 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 14:35:49,662 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 14:38:15,917 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 14:40:13,675 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
+22 окт. 2025 14:45:21,235 ERROR SystemLogger - Failed to initialize tess4j. Add tess4j jar to classpath.
