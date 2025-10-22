@@ -1,0 +1,18 @@
+16 окт. 2025 13:00:18,810  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@4b2d44bc ОШИБКА: столбец "hockeystats_team_playerofteam" отношения "_auto_hockeystats_playerofteam" уже существует
+16 окт. 2025 13:01:17,713  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@4b2d44bc ОШИБКА: столбец "hockeystats_team_playerofteam" отношения "_auto_hockeystats_playerofteam" уже существует
+16 окт. 2025 13:02:12,179  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@6f9ad11c ОШИБКА: столбец "hockeystats_team_playerofteam" отношения "_auto_hockeystats_playerofteam" уже существует
+16 окт. 2025 13:03:41,341  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@4b2d44bc ОШИБКА: столбец "hockeystats_team_playerofteam" отношения "_auto_hockeystats_playerofteam" уже существует
+16 окт. 2025 16:37:06,806  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@8b91134 ОШИБКА: столбец "_deleted_hockeystats_score_game" отношения "_auto_hockeystats_game" уже существует
+20 окт. 2025 14:51:27,844  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@1976f537 ОШИБКА: столбец "_deleted_hockeystats_t1_goal" отношения "_auto_hockeystats_goal" уже существует
+20 окт. 2025 14:51:27,846  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@45f421c ОШИБКА: столбец "_deleted_hockeystats_t2_goal" отношения "_auto_hockeystats_goal" уже существует
+20 окт. 2025 15:55:28,965  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@45f421c ОШИБКА: столбец "_deleted_hockeystats_playerscores_goal" отношения "_auto_hockeystats_goal" уже существует
+20 окт. 2025 16:18:22,743  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@45f421c ОШИБКА: столбец "_deleted_hockeystats_scores_goal" отношения "_auto_hockeystats_goal" уже существует
+21 окт. 2025 13:03:05,485  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@76c387f9 ОШИБКА: столбец "_deleted_hockeystats_scores_player" отношения "_auto_hockeystats_player" уже существует
+21 окт. 2025 13:23:21,353  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@36b310aa ОШИБКА: столбец "_deleted_hockeystats_name_team" отношения "_auto_hockeystats_team" уже существует
+21 окт. 2025 16:13:56,677  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@1e0895f5 ОШИБКА: столбец "_deleted_hockeystats_home_goal" отношения "_auto_hockeystats_goal" уже существует
+21 окт. 2025 16:13:56,679  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@1ac4ccad ОШИБКА: столбец "_deleted_hockeystats_away_goal" отношения "_auto_hockeystats_goal" уже существует
+22 окт. 2025 10:16:38,972  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@39008c9f ОШИБКА: столбец "_deleted_hockeystats_home_goal" отношения "_auto_hockeystats_goal" уже существует
+22 окт. 2025 10:16:38,977  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@173f73e7 ОШИБКА: столбец "_deleted_hockeystats_away_goal" отношения "_auto_hockeystats_goal" уже существует
+22 окт. 2025 13:39:15,285  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@a33b4e3 ОШИБКА: столбец "_deleted_hockeystats_scorerteam_goal" отношения "_auto_hockeystats_goal" уже существует
+22 окт. 2025 13:39:15,289  -  -  ERROR SQLLogger - org.postgresql.jdbc.PgStatement@76c387f9 ОШИБКА: столбец "_deleted_hockeystats_home_goal" отношения "_auto_hockeystats_goal" уже существует
+22 окт. 2025 14:18:40,883  -  -   INFO SQLLogger - REMOVE UNUSED TEMP TABLE : t_28, DEBUG INFO : chcl:news
